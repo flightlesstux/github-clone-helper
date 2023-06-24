@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "GitHub Clone Helper",
+    "version": "1.0",
+    "description": "Adds 'git clone' before HTTPS and SSH clone URLs on GitHub.",
+    "icons": {
+        "48": "images/icon48.png"
+    },
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_icon": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://github.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
+  
